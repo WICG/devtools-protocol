@@ -1,0 +1,16 @@
+<pre class='metadata'>
+Title: devtools-protocol
+Shortname: devtools-protocol
+Level: 1
+Status: CG-DRAFT
+Group: WICG
+Repository: WICG/devtools-protocol
+URL: http://example.com/url-this-spec-will-live-at
+Editor: Rick Byers, Google https://google.com, rbyers@google.com
+Abstract: A short description of your spec, one or two sentences.
+</pre>
+
+Introduction {#intro}
+=====================
+
+See https://github.com/tabatkins/bikeshed to get started.
