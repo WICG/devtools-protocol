@@ -6,9 +6,13 @@ This repository is for resources and discussion around aligning the developer to
 
 - Help empower web developers to build great applications by supporting an ecosystem of diagnostics tools which work well across a variety of targets.
 - Reduce the need for target-specific "devtools protocol adapters" in order to simplify the experience for tool users and tool developers.
-- Provide a vendor-neutral forum to facilitate collaboration and consensus building between different protocol implementations.
+- Provide a vendor-neutral forum to facilitate collaboration and consensus building between different protocol implementations and interested clients.
 
 [Contributions](CONTRIBUTING.md) from the community are welcome!
+
+## What is here in this repo
+
+Not much yet, just a [few issues](https://github.com/WICG/devtools-protocol/issues) tracking work we'd like to do and links to a few resources below.
 
 ## Implementations
 Engines and browsers that all have a similar debugging protocol built-in:
