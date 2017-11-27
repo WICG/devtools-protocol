@@ -35,6 +35,7 @@ There are a variety of tools which target some or all of the above implementatio
 - [Chrome DevTools protocol clients](https://github.com/ChromeDevTools/awesome-chrome-devtools#chrome-devtools-protocol)
 - [VS Code debuggers](https://github.com/Microsoft/vscode-chrome-debug-core/blob/master/README.md)
 - [RemoteDebug integrations](https://remotedebug.org/integrations/)
+- [sonarwhal](https://sonarwhal.com/)
 
 ## Key Use Cases
 
