@@ -16,7 +16,7 @@ This repository is for resources and discussion around aligning the developer to
 Not much yet, just a [few issues](https://github.com/WICG/devtools-protocol/issues) tracking work we'd like to do and links to a few resources below.
 
 ## Implementations
-Engines and browsers that all have a similar debugging protocol built-in:
+Engines and browsers that all have a [similar](http://compatibility.remotedebug.org/) debugging protocol built-in:
 - [Chrome DevTools](https://chromedevtools.github.io/devtools-protocol/), also used by most other chromium-based browsers
 - [WebKit / Safari](https://github.com/WebKit/webkit/tree/master/Source/JavaScriptCore/inspector/protocol)
 - [Node.js](https://chromedevtools.github.io/devtools-protocol/v8/)
@@ -27,8 +27,6 @@ Adapters that expose a common protocol:
 - [Microsoft Edge Diagnostics Adapter](https://github.com/Microsoft/edge-diagnostics-adapter) - to be replaced with native support (above).
 - [RemoteDebug iOS WebKit Adapter](https://github.com/RemoteDebug/remotedebug-ios-webkit-adapter)
 - See also [RemoteDebug list of adapters](https://remotedebug.org/adaptors/)
-
-See also [RemoteDebug Protocol Compatibility Tables](http://compatibility.remotedebug.org/)
 
 ## Clients
 There are a variety of tools which target some or all of the above implementations of the protocol.  Here are a few resources:
