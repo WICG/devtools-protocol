@@ -36,7 +36,7 @@ JSON object which represents the available API surface for current version of th
 
 
 
-### GET /json, GET /json/list
+### GET /json/list
 
 Provides a candidate list of page targets for debugging.
 
@@ -55,9 +55,6 @@ Provides a candidate list of page targets for debugging.
   webSocketDebuggerUrl: "ws://localhost:9222/devtools/page/961C1EB7-A0DA-2F42-F6D4-76B453E70DB5"
 } ]
 ```
-
-For valid targets the response is 200, `"Target activated"`.
-
 
 ### POST /json/close/{targetId}
 
