@@ -56,23 +56,6 @@ Provides a candidate list of page targets for debugging.
 } ]
 ```
 
-
-### POST /json/new?{url}
-
-It responds with a description of the newly spawned process.
-The format is the same as one element in the array returned by `/json`.
-
-
-### POST /json/activate/{targetId}
-
-In Chrome this would bring a page into the foreground (activate a tab).
-
-If the target is invalid, responds with 404 and a string like this:
-
-```json
-"No such target id: {pageId}"
-```
-
 For valid targets the response is 200, `"Target activated"`.
 
 
