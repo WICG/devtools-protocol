@@ -1,4 +1,4 @@
-﻿{
+{
     "version": {
         "major": "0",
         "minor": "1"
@@ -152,7 +152,8 @@
                                 "block",
                                 "script",
                                 "eval",
-                                "module"
+                                "module",
+                                "return"
                             ],
                             "description": "Scope type."
                         },
@@ -431,22 +432,6 @@
                     ],
                     "experimental": true,
                     "description": "Replace previous blackbox patterns with passed ones. Forces backend to skip stepping/pausing in scripts with url matching one of the patterns. The debugger will try to leave blackboxed script by performing \u0027step in\u0027 several times, finally resorting to \u0027step out\u0027 if unsuccessful."
-                },
-                {
-                    "name": "msSetDebuggerPropertyValue",
-                    "parameters": [
-                        {
-                            "name": "debuggerPropertyId",
-                            "type": "string",
-                            "description": "Microsoft: The property id (i.e. msDebuggerPropertyId) to set."
-                        },
-                        {
-                            "name": "newValue",
-                            "type": "string"
-                        }
-                    ],
-                    "experimental": true,
-                    "description": "Microsoft: Sets the specified debugger property to the specified value."
                 }
             ],
             "events": [
@@ -502,32 +487,11 @@
                             "experimental": true
                         },
                         {
-                            "name": "msParentId",
-                            "type": "string",
-                            "optional": true,
-                            "experimental": true,
-                            "description": "This is the parent document ID."
-                        },
-                        {
                             "name": "msMimeType",
                             "type": "string",
                             "optional": true,
                             "experimental": true,
                             "description": "This is the mime type."
-                        },
-                        {
-                            "name": "msIsDynamicCode",
-                            "type": "boolean",
-                            "optional": true,
-                            "experimental": true,
-                            "description": "This indicates whether it is dynamic code."
-                        },
-                        {
-                            "name": "msLongDocumentId",
-                            "type": "integer",
-                            "optional": true,
-                            "experimental": true,
-                            "description": "This is the long document ID."
                         }
                     ],
                     "description": "Fired when the script is parsed. This event is also fired for all known and uncollected scripts upon enabling debugger."
@@ -544,13 +508,6 @@
                             "name": "location",
                             "$ref": "Location",
                             "description": "Actual breakpoint location."
-                        },
-                        {
-                            "name": "msLength",
-                            "type": "integer",
-                            "optional": true,
-                            "experimental": true,
-                            "description": "Microsoft: Length of code (i.e. number of characters) at the breakpoint location."
                         }
                     ],
                     "description": "Fired when breakpoint is resolved to an actual script and location."
@@ -573,7 +530,8 @@
                                 "breakpoint",
                                 "step",
                                 "exception",
-                                "other"
+                                "other",
+                                "EventListener"
                             ],
                             "description": "Pause reason."
                         },
@@ -591,6 +549,12 @@
                                 "type": "string"
                             },
                             "description": "Hit breakpoints IDs"
+                        },
+                        {
+                            "name": "asyncStackTrace",
+                            "$ref": "StackTrace",
+                            "optional": true,
+                            "description": "JavaScript async stack trace."
                         }
                     ],
                     "description": "Fired when the debuggers breaks for a breakpoint or exception."
@@ -598,6 +562,110 @@
                 {
                     "name": "resumed",
                     "description": "Fired when the debugger resumes execution."
+                }
+            ]
+        },
+        {
+            "domain": "Runtime",
+            "description": "Runtime domain exposes JavaScript runtime by means of remote evaluation and mirror objects. Evaluation results are returned as mirror object that expose object type, string representation and unique identifier that can be used for further object reference. Original objects are maintained in memory unless they are either explicitly released.",
+            "types": [
+                {
+                    "id": "ScriptId",
+                    "type": "string",
+                    "description": "Unique script identifier."
+                },
+                {
+                    "id": "CallArgument",
+                    "type": "object",
+                    "description": "Represents function call argument. Either remote object id \u003ccode\u003eobjectId\u003c/code\u003e, primitive \u003ccode\u003evalue\u003c/code\u003e, unserializable primitive value or neither of (for undefined) them should be specified.",
+                    "properties": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "optional": true,
+                            "description": "Primitive value or serializable javascript object."
+                        },
+                        {
+                            "name": "unserializableValue",
+                            "$ref": "UnserializableValue",
+                            "optional": true,
+                            "description": "Primitive value which can not be JSON-stringified."
+                        },
+                        {
+                            "name": "objectId",
+                            "$ref": "RemoteObjectId",
+                            "optional": true,
+                            "description": "Remote object handle."
+                        }
+                    ]
+                },
+                {
+                    "id": "ExecutionContextId",
+                    "type": "integer",
+                    "description": "Id of an execution context."
+                },
+                {
+                    "id": "RemoteObject",
+                    "type": "object",
+                    "description": "Mirror object referencing original JavaScript object.",
+                    "properties": [
+                        {
+                            "name": "type",
+                            "type": "string",
+                            "enum": [
+                                "object",
+                                "function",
+                                "undefined",
+                                "string",
+                                "number",
+                                "boolean",
+                                "symbol"
+                            ],
+                            "description": "Object type."
+                        },
+                        {
+                            "name": "subtype",
+                            "type": "string",
+                            "optional": true,
+                            "enum": [
+                                "null",
+                                "error",
+                                "promise",
+                                "node"
+                            ],
+                            "description": "Object subtype hint. Specified for \u003ccode\u003eobject\u003c/code\u003e type values only."
+                        },
+                        {
+                            "name": "className",
+                            "type": "string",
+                            "optional": true,
+                            "description": "Object class (constructor) name. Specified for \u003ccode\u003eobject\u003c/code\u003e type values only."
+                        },
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "optional": true,
+                            "description": "Remote object value in case of primitive values or JSON values (if it was requested)."
+                        },
+                        {
+                            "name": "unserializableValue",
+                            "$ref": "UnserializableValue",
+                            "optional": true,
+                            "description": "Primitive value which can not be JSON-stringified does not have \u003ccode\u003evalue\u003c/code\u003e, but gets this property."
+                        },
+                        {
+                            "name": "description",
+                            "type": "string",
+                            "optional": true,
+                            "description": "String representation of the object."
+                        },
+                        {
+                            "name": "objectId",
+                            "$ref": "RemoteObjectId",
+                            "optional": true,
+                            "description": "Unique object identifier (for non-primitive values)."
+                        }
+                    ]
                 }
             ]
         }
