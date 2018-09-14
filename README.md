@@ -21,7 +21,7 @@ Engines and browsers that all have a [similar](http://compatibility.remotedebug.
 - [WebKit / Safari](https://github.com/WebKit/webkit/tree/master/Source/JavaScriptCore/inspector/protocol)
 - [Node.js](https://chromedevtools.github.io/devtools-protocol/v8/)
 - Firefox - [in development](https://groups.google.com/forum/#!msg/mozilla.dev.platform/4-4A8W-nP5g/Y9C9UkWTAAAJ)
-- Edge - in development (link forthcoming)
+- [Edge DevTools Protocol](https://docs.microsoft.com/en-us/microsoft-edge/devtools-protocol/)
 
 Adapters that expose a common protocol:
 - [Microsoft Edge Diagnostics Adapter](https://github.com/Microsoft/edge-diagnostics-adapter) - to be replaced with native support (above).
