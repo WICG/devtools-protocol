@@ -48,11 +48,11 @@ Provides a candidate list of page targets for debugging.
 
 ```json
 [ {
-  id: "961C1EB7-A0DA-2F42-F6D4-76B453E70DB5",
-  title: "Yahoo",
-  type: "page",
-  url: "https://www.yahoo.com/",
-  webSocketDebuggerUrl: "ws://localhost:9222/devtools/page/961C1EB7-A0DA-2F42-F6D4-76B453E70DB5"
+  "id": "961C1EB7-A0DA-2F42-F6D4-76B453E70DB5",
+  "title": "Yahoo",
+  "type": "page",
+  "url": "https://www.yahoo.com/",
+  "webSocketDebuggerUrl": "ws://localhost:9222/devtools/page/961C1EB7-A0DA-2F42-F6D4-76B453E70DB5"
 } ]
 ```
 
