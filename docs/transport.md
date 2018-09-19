@@ -23,12 +23,9 @@ Diagnostics & debugging APIs are used to inspect, subscribe to, and manipulate a
 A DevTools Protocol server is expected to expose an HTTP server.
 
 ### Protocol
-The used protocol is the well known [JSON-RPC 2.0 Specification](http://www.jsonrpc.org/specification), which is  a stateless, light-weight remote procedure call (RPC) protocol. JSON-RPC is transport agnostic in that the concepts can be used within the same process, over sockets, over http, or in many various message passing environments. 
+The used protocol is the well known [JSON-RPC 2.0 Specification](http://www.jsonrpc.org/specification), which is  a stateless, light-weight remote procedure call (RPC) protocol. JSON-RPC is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. 
 
 ### Transport
-The DevTools Protocol is using WebSockets as defined by [RFC 6455 - The WebSocket Protocol](https://tools.ietf.org/html/rfc6455) as it's main transport mechanism. 
+The DevTools Protocol is using WebSockets as defined by [RFC 6455 - The WebSocket Protocol](https://tools.ietf.org/html/rfc6455) as its main transport mechanism. 
 
 A DevTools Protocol server is expected to expose a WebSocket server.
-
-
-
