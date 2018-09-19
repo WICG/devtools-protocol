@@ -15,9 +15,9 @@ Provides information on the host machine's browser and which version of the DevT
 
 ```json
 {
-  Browser: "Chrome/37.0.2062.124",
-  Protocol-Version: "1.1",
-  User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36",
+  "Browser": "Chrome/37.0.2062.124",
+  "Protocol-Version": "1.1",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36",
 }
 ```
 
