@@ -34,6 +34,7 @@ There are a variety of tools which target some or all of the above implementatio
 - [VS Code debuggers](https://github.com/Microsoft/vscode-chrome-debug-core/blob/master/README.md)
 - [RemoteDebug integrations](https://remotedebug.org/integrations/)
 - [sonarwhal](https://sonarwhal.com/)
+- [Foxdriver](https://github.com/saucelabs/foxdriver)
 
 ## Key Use Cases
 
