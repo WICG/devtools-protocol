@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const Footer = `</p>\n---\n`;
+const Footer = `\n---\n`;
 
 var generateEdpDocs = function generateEdpDocs(protocolFilePath, outputFolderPath) {
 
@@ -99,7 +99,7 @@ description: Reference for the ${domain.domain} Domain. ${domain.description}
 
     // Generate table header
     var summaryTableElements = [];
-    var summaryTableHeader = `\n# ${domain.domain}\n${domain.description} \n| | |\n|-|-|`;
+    var summaryTableHeader = `\n# ${domain.domain}\n${domain.description}\n\n| | |\n|-|-|`;
 
     summaryTableElements.push(summaryTableHeader);
     if (domain.commands && domain.commands.length > 0) {

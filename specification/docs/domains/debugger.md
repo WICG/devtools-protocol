@@ -4,7 +4,8 @@ description: Reference for the Debugger Domain. Debugger domain exposes JavaScri
 ---
 
 # Debugger
-Debugger domain exposes JavaScript debugging capabilities. It allows setting and removing breakpoints, stepping through execution, exploring stack traces, etc. 
+Debugger domain exposes JavaScript debugging capabilities. It allows setting and removing breakpoints, stepping through execution, exploring stack traces, etc.
+
 | | |
 |-|-|
 | [**Methods**](#methods) | [enable](#enable), [disable](#disable), [getPossibleBreakpoints](#getpossiblebreakpoints), [setBreakpointsActive](#setbreakpointsactive), [setBreakpointByUrl](#setbreakpointbyurl), [setBreakpoint](#setbreakpoint), [removeBreakpoint](#removebreakpoint), [stepOver](#stepover), [stepInto](#stepinto), [stepOut](#stepout), [pause](#pause), [resume](#resume), [getScriptSource](#getscriptsource), [setPauseOnExceptions](#setpauseonexceptions), [evaluateOnCallFrame](#evaluateoncallframe), [setVariableValue](#setvariablevalue), [setBlackboxPatterns](#setblackboxpatterns) |
@@ -13,12 +14,12 @@ Debugger domain exposes JavaScript debugging capabilities. It allows setting and
 ## Methods 
 ### enable 
 Enables debugger for the given page. Clients should not assume that the debugging has been enabled until the result for this command is received.
-</p>
+
 ---
 
 ### disable 
 Disables debugger for given page.
-</p>
+
 ---
 
 ### getPossibleBreakpoints 
@@ -60,7 +61,7 @@ Returns possible locations for breakpoint. scriptId in start and end range locat
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### setBreakpointsActive 
@@ -81,7 +82,7 @@ Activates / deactivates all breakpoints on the page.
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### setBreakpointByUrl 
@@ -143,7 +144,7 @@ Sets JavaScript breakpoint at given location specified either by URL or URL rege
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### setBreakpoint 
@@ -190,7 +191,7 @@ Sets JavaScript breakpoint at a given location.
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### removeBreakpoint 
@@ -211,32 +212,32 @@ Removes JavaScript breakpoint.
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### stepOver 
 Steps over the statement.
-</p>
+
 ---
 
 ### stepInto 
 Steps into the function call.
-</p>
+
 ---
 
 ### stepOut 
 Steps out of the function call.
-</p>
+
 ---
 
 ### pause 
 Stops on the next JavaScript statement.
-</p>
+
 ---
 
 ### resume 
 Resumes JavaScript execution.
-</p>
+
 ---
 
 ### getScriptSource 
@@ -273,7 +274,7 @@ Returns source for the script with given id.
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### setPauseOnExceptions 
@@ -294,7 +295,7 @@ Defines pause on exceptions state. Can be set to stop on all exceptions, uncaugh
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### evaluateOnCallFrame 
@@ -336,7 +337,7 @@ Evaluates expression on a given call frame.
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### setVariableValue 
@@ -372,7 +373,7 @@ Changes value of variable in a callframe. Object-based scopes are not supported 
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### setBlackboxPatterns 
@@ -393,7 +394,7 @@ Replace previous blackbox patterns with passed ones. Forces backend to skip step
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ## Events 
@@ -460,7 +461,7 @@ Fired when the script is parsed. This event is also fired for all known and unco
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### breakpointResolved 
@@ -486,7 +487,7 @@ Fired when breakpoint is resolved to an actual script and location.
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### paused 
@@ -527,12 +528,12 @@ Fired when the debuggers breaks for a breakpoint or exception.
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ### resumed 
 Fired when the debugger resumes execution.
-</p>
+
 ---
 
 ## Types 
@@ -540,14 +541,14 @@ Fired when the debugger resumes execution.
 ### <a name="breakpointid"></a> BreakpointId `string`
 Breakpoint identifier.
 
-</p>
+
 ---
 
 
 ### <a name="callframeid"></a> CallFrameId `string`
 Call frame identifier.
 
-</p>
+
 ---
 
 
@@ -585,7 +586,7 @@ Location in the source code.
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 
@@ -628,7 +629,7 @@ Break location in the source code.
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 
@@ -686,7 +687,7 @@ JavaScript call frame. Array of call frames form the call stack.
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 
@@ -729,7 +730,7 @@ Scope description.
         </tr>
     </tbody>
 </table>
-</p>
+
 ---
 
 ## Dependencies 
