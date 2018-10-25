@@ -1,0 +1,14 @@
+branches:
+  only:
+    - master
+language: node_js
+node_js: stable
+script:
+  - node tools/generate_docs.js
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  keep-history: true
+  on:
+    branch: master
