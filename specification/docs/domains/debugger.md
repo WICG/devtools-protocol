@@ -6,11 +6,12 @@ description: Reference for the Debugger Domain. Debugger domain exposes JavaScri
 # Debugger
 Debugger domain exposes JavaScript debugging capabilities. It allows setting and removing breakpoints, stepping through execution, exploring stack traces, etc.
 
-| | |
-|-|-|
-| [**Methods**](#methods) | [enable](#enable), [disable](#disable), [getPossibleBreakpoints](#getpossiblebreakpoints), [setBreakpointsActive](#setbreakpointsactive), [setBreakpointByUrl](#setbreakpointbyurl), [setBreakpoint](#setbreakpoint), [removeBreakpoint](#removebreakpoint), [stepOver](#stepover), [stepInto](#stepinto), [stepOut](#stepout), [pause](#pause), [resume](#resume), [getScriptSource](#getscriptsource), [setPauseOnExceptions](#setpauseonexceptions), [evaluateOnCallFrame](#evaluateoncallframe), [setVariableValue](#setvariablevalue), [setBlackboxPatterns](#setblackboxpatterns) |
-| [**Events**](#events) | [scriptParsed](#scriptparsed), [breakpointResolved](#breakpointresolved), [paused](#paused), [resumed](#resumed) |
-| [**Types**](#types) | [BreakpointId](#breakpointid), [CallFrameId](#callframeid), [Location](#location), [BreakLocation](#breaklocation), [CallFrame](#callframe), [Scope](#scope) |
+<table>
+<tr><th><a href="#methods">Methods</a></th><td><a href="#enable">enable</a>, <a href="#disable">disable</a>, <a href="#getpossiblebreakpoints">getPossibleBreakpoints</a>, <a href="#setbreakpointsactive">setBreakpointsActive</a>, <a href="#setbreakpointbyurl">setBreakpointByUrl</a>, <a href="#setbreakpoint">setBreakpoint</a>, <a href="#removebreakpoint">removeBreakpoint</a>, <a href="#stepover">stepOver</a>, <a href="#stepinto">stepInto</a>, <a href="#stepout">stepOut</a>, <a href="#pause">pause</a>, <a href="#resume">resume</a>, <a href="#getscriptsource">getScriptSource</a>, <a href="#setpauseonexceptions">setPauseOnExceptions</a>, <a href="#evaluateoncallframe">evaluateOnCallFrame</a>, <a href="#setvariablevalue">setVariableValue</a>, <a href="#setblackboxpatterns">setBlackboxPatterns</a></td></tr>
+<tr><th><a href="#events">Events</a></th><td><a href="#scriptparsed">scriptParsed</a>, <a href="#breakpointresolved">breakpointResolved</a>, <a href="#paused">paused</a>, <a href="#resumed">resumed</a></td></tr>
+<tr><th><a href="#types">Types</a></th><td><a href="#breakpointid">BreakpointId</a>, <a href="#callframeid">CallFrameId</a>, <a href="#location">Location</a>, <a href="#breaklocation">BreakLocation</a>, <a href="#callframe">CallFrame</a>, <a href="#scope">Scope</a></td></tr>
+</table>
+
 ## Methods 
 ### enable 
 Enables debugger for the given page. Clients should not assume that the debugging has been enabled until the result for this command is received.
