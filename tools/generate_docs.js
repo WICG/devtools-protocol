@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const Footer = `</p>\n---\n`;
+const Footer = `\n---\n`;
 
 var generateEdpDocs = function generateEdpDocs(protocolFilePath, outputFolderPath) {
 
