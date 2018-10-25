@@ -99,20 +99,22 @@ description: Reference for the ${domain.domain} Domain. ${domain.description}
 
     // Generate table header
     var summaryTableElements = [];
-    var summaryTableHeader = `\n# ${domain.domain}\n${domain.description}\n\n| | |\n|-|-|`;
+    var summaryTableHeader = `\n# ${domain.domain}\n${domain.description}\n\n<table>`;
 
     summaryTableElements.push(summaryTableHeader);
     if (domain.commands && domain.commands.length > 0) {
-        summaryTableElements.push(`| [**Methods**](#methods) | ${generateLinks(domain.commands)} |`);
+        summaryTableElements.push(`<tr><th><a href="#methods">Methods</a></th><td>${generateLinks(domain.commands)}</td></tr>`);
     }
 
     if (domain.events && domain.events.length > 0) {
-        summaryTableElements.push(`| [**Events**](#events) | ${generateLinks(domain.events)} |`);
+        summaryTableElements.push(`<tr><th><a href="#events">Events</a></th><td>${generateLinks(domain.events)}</td></tr>`);
     }
 
     if (domain.types && domain.types.length > 0) {
-        summaryTableElements.push(`| [**Types**](#types) | ${generateLinks(domain.types, 'id')} |`);
+        summaryTableElements.push(`<tr><th><a href="#types">Types</a></th><td>${generateLinks(domain.types, 'id')}</td></tr>`);
     }
+
+    summaryTableElements.push('</table>\n');
 
     // Generate body section
     var bodySections = [];
@@ -150,7 +152,7 @@ function generateLinks(objs, prop = 'name') {
     var links = [];
     for (var i = 0; i < objs.length; i++) {
         var name = objs[i][prop];
-        links.push(`[${name}](#${name.toLowerCase()})`)
+        links.push(`<a href="#${name.toLowerCase()}">${name}</a>`)
     }
 
     return links.join(', ');
