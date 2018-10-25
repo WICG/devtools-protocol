@@ -50,9 +50,9 @@ function writeDomainsSummaryDoc(protocol, outputFolderPath) {
     var version = protocol.version;
     var domains = protocol.domains;
     var metadata = `---
-        description: List of supported domains in DevTools Protocol
-        title: Domains 
-     ---`;
+description: List of supported domains in DevTools Protocol
+title: Domains
+---`;
 
     var domainSummaryList = [];
 
@@ -93,9 +93,9 @@ function writeDomainMarkdownDocs(domains, version, outputFolderPath) {
 
 function generateDomainMarkdown(domain, version) {
     var metadata =`---
-        title: ${domain.domain} Domain - DevTools Protocol
-        description: Reference for the ${domain.domain} Domain. ${domain.description}
-    ---`;
+title: ${domain.domain} Domain - DevTools Protocol
+description: Reference for the ${domain.domain} Domain. ${domain.description}
+---`;
 
     // Generate table header
     var summaryTableElements = [];
@@ -103,11 +103,11 @@ function generateDomainMarkdown(domain, version) {
 
     summaryTableElements.push(summaryTableHeader);
     if (domain.commands && domain.commands.length > 0) {
-        summaryTableElements.push(`| [**Methods**](#methods) | ${generateLinks(domain.commands)} |`)   
+        summaryTableElements.push(`| [**Methods**](#methods) | ${generateLinks(domain.commands)} |`);
     }
 
     if (domain.events && domain.events.length > 0) {
-        summaryTableElements.push(`| [**Events**](#events) | ${generateLinks(domain.events)} |`);   
+        summaryTableElements.push(`| [**Events**](#events) | ${generateLinks(domain.events)} |`);
     }
 
     if (domain.types && domain.types.length > 0) {
@@ -123,16 +123,16 @@ function generateDomainMarkdown(domain, version) {
 
         // Generate Events
         var events = `## Events \n${generateObjs(domain.events, generateMethod)}`;
-        bodySections.push(events);      
-        
+        bodySections.push(events);
+
         // Generate Types
         var types = `## Types \n${generateObjs(domain.types, generateType)}`;
-        bodySections.push(types);   
-        
+        bodySections.push(types);
+
         // Generate Dependencies
         var dependencies = `## Dependencies \n${generateDependencyLinks(domain.dependencies)}`;
-        bodySections.push(dependencies);          
-        
+        bodySections.push(dependencies);
+
 
     var sections = []
     sections.push(metadata);
