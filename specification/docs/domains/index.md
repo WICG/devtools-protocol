@@ -1,7 +1,7 @@
 ---
-        description: List of supported domains in DevTools Protocol
-        title: Domains 
-     ---
+description: List of supported domains in DevTools Protocol
+title: Domains
+---
 # DevTools Protocol Domains
 
 - [Debugger](debugger.md) - Debugger domain exposes JavaScript debugging capabilities. It allows setting and removing breakpoints, stepping through execution, exploring stack traces, etc.

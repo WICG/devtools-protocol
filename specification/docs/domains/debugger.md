@@ -1,7 +1,7 @@
 ---
-        title: Debugger Domain - DevTools Protocol
-        description: Reference for the Debugger Domain. Debugger domain exposes JavaScript debugging capabilities. It allows setting and removing breakpoints, stepping through execution, exploring stack traces, etc.
-    ---
+title: Debugger Domain - DevTools Protocol
+description: Reference for the Debugger Domain. Debugger domain exposes JavaScript debugging capabilities. It allows setting and removing breakpoints, stepping through execution, exploring stack traces, etc.
+---
 
 # Debugger
 Debugger domain exposes JavaScript debugging capabilities. It allows setting and removing breakpoints, stepping through execution, exploring stack traces, etc. 
