@@ -1,5 +1,7 @@
 # DevTools Protocol (Archived)
 
+⚠️⚠️ **Status**: Transitioned to https://www.w3.org/groups/wg/browser-tools-testing/ ⚠️⚠️
+
 This repository is for resources and discussion around aligning the developer tools protocol used by various browsers, JavaScript engines and debugging tools.
 
 **⚠️ This repository is archived and no longer maintained.**
